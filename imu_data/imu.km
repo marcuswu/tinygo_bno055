@@ -1,0 +1,24 @@
+karmem app @golang.package(`imu_data`);
+
+struct Vector inline {
+    X float64;
+    Y float64;
+    Z float64;
+}
+
+struct IMUDataEntry table {
+    Acceleration Vector;
+    AngularVelocity Vector;
+    Rotation Vector;
+    Magnetometer Vector;
+    Gravity Vector;
+    EntryTime int64;
+}
+
+struct IMUEntry inline {
+    Entry IMUDataEntry;
+}
+
+struct IMUData table {
+    Entries []IMUEntry;
+}
